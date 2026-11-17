@@ -1,0 +1,16 @@
+<header class="project-header">
+    <h1>Hasil Pencarian Proyek</h1>
+    <form action="{{ url_for('search') }}" method="get">
+        <label for="project-query">Cari berdasarkan judul:</label>
+        <input id="project-query" type="search" name="q" value="{{ query }}" placeholder="Nama proyek">
+        <button type="submit">Cari</button>
+    </form>
+</header>
+<article class="project-card">
+        <img src="{{ url_for('static', filename='images/project.png') }}" alt="">
+        <div class="project-content">
+            <h2>{{ proyek.title }}</h2>
+            <p>{{ proyek.description }}</p>
+            <a href="{{ proyek.url }}">View Project</a>
+        </div>
+    </article>
